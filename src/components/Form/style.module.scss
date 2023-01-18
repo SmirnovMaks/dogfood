@@ -1,0 +1,38 @@
+.form {
+    display: flex;
+    flex-direction: column;
+    max-width: 320px;
+    gap: 5px;
+    margin-bottom: 5px;
+}
+
+.error {
+    font-size: 10px;
+    color: red;
+}
+
+.info {
+    color: #7b8e98;
+    font-size: 12px;
+}
+
+.center {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.input {
+    border-radius: 12px;
+    background-color: transparent;
+    border: 1px solid #d8dae9;
+    padding: 14px 16px;
+    width: 300px;
+    margin-bottom: 14px;
+    margin: 0;
+
+    &:focus {
+        border: 1px solid #ffdb4d;
+    }
+}

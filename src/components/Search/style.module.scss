@@ -1,0 +1,23 @@
+.search {
+    position: relative;
+}
+
+.input {
+    min-width: 300px;
+    width: 70%;
+    padding: 16px;
+    border-radius: 32px;
+    border-color: transparent;
+}
+
+.icon,
+.iconCross {
+    position: absolute;
+    right: 0px;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.iconCross {
+    right: 20px;
+}
