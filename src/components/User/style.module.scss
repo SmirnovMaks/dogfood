@@ -14,3 +14,10 @@
     text-decoration: none;
     color: inherit;
 }
+
+.dFlex {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    cursor: pointer;
+}

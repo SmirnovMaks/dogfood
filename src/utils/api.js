@@ -1,6 +1,6 @@
 import { getItem } from './storage';
 
-const onResponce = (res) => (res.ok ? res.json() : Promise.reject(`Error: ${res.status}`))
+const onResponce = (res) => (res.ok ? res.json() : Promise.reject(console.log(`Error: ${res.message}`)))
 
 class API {
     constructor({ url, token }) {

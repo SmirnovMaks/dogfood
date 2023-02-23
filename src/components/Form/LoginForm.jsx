@@ -2,8 +2,8 @@ import React from 'react';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import s from './style.module.scss';
 import cn from 'classnames';
-import Button from '../Button/Button';
-import { EMAIL_REGEXP, PASSWORD_REGEXP, PHRASES } from '../../utils/constants';
+import { EMAIL_REGEXP, PHRASES } from '../../utils/constants';
+import { CustomButton } from '../Button/CustomButton';
 
 
 export const LoginForm = ({ handleRequestLogin, onChangeType }) => (
@@ -14,7 +14,7 @@ export const LoginForm = ({ handleRequestLogin, onChangeType }) => (
             validate={values => {
                 const errors = {};
                 if (!values.email) {
-                    errors.email = 'Обязательное поле'
+                    errors.email = PHRASES.required
                 } else if (
                     !EMAIL_REGEXP.test(values.email)
                 ) {
@@ -22,13 +22,8 @@ export const LoginForm = ({ handleRequestLogin, onChangeType }) => (
                 }
 
                 if (!values.password) {
-                    errors.password = 'Обязательное поле'
-                } else if (
-                    !PASSWORD_REGEXP.test(values.password)
-                ) {
-                    errors.password = PHRASES.incorrectPassword
+                    errors.password = PHRASES.required
                 }
-
                 return errors;
             }}
             onSubmit={(values) => {
@@ -36,18 +31,18 @@ export const LoginForm = ({ handleRequestLogin, onChangeType }) => (
 
             }}
         >
-            {({ isSubmitting }) => (
+            {() => (
                 <Form className={s.form}>
-                    <Field type="email" placeholder='Email' name="email" className={s.input} />
+                    <Field type="email" placeholder='Email' name="email" className={s.input} ></Field>
                     <ErrorMessage name="email" component="div" className={s.error} />
                     <Field type="password" placeholder='Password' name="password" className={s.input} />
                     <ErrorMessage name="password" component="div" className={s.error} />
-                    <Button type="submit" color='primary' >
+                    <CustomButton variant="contained" type="submit" color='primary' >
                         Войти
-                    </Button>
+                    </CustomButton>
                 </Form>
             )}
         </Formik>
-        <Button color='secondary' onClick={() => onChangeType('registration')}>Регистрация</Button>
+        <CustomButton variant="outlined" color='secondary' onClick={() => onChangeType('registration')}>Регистрация</CustomButton>
     </div>
 );

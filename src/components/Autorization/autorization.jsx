@@ -1,16 +1,18 @@
 import React from "react";
 import s from './style.module.scss'
 import { ReactComponent as Icon } from '../../assets/image/dog_face.svg'
-import { Link } from "react-router-dom";
-import TransitionsModal from "../Modal/Modal";
 
-export const Autorization = () => {
+export const Autorization = ({ setOpenModal }) => {
+    const openModal = () => {
+        setOpenModal(true)
+    }
+
     return (
-        <>
-            <Link to='/login'>
-                <Icon className={s.autorization} />
-            </Link>
+        <div className={s.autorization} onClick={openModal}>
 
-        </>
+            <Icon className={s.autorization} />
+            <p className={s.text}>Вход</p>
+
+        </div>
     )
 }

@@ -5,3 +5,17 @@
     justify-content: space-around;
     padding: 16px;
 }
+
+.dFlex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 5px;
+    cursor: pointer;
+    width: 10%;
+}
+
+.favourites {
+    fill: transparent;
+    stroke: #000;
+}

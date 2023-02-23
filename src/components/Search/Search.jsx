@@ -1,33 +1,53 @@
 import React, { useState } from "react";
-import { ReactComponent as IconSearch } from '../../assets/image/ic-search.svg';
-import { ReactComponent as IconClose } from '../../assets/image/ic-close-input.svg';
 import s from './style.module.scss';
+import { Divider, IconButton, TextField } from "@mui/material";
+import SearchIcon from '@mui/icons-material/Search';
+import CloseIcon from '@mui/icons-material/Close';
 
-export const Search = ({ searchQuery }) => {
-    const [text, setText] = useState('');
+export const Search = ({ setSearchQuery }) => {
+    const [text, setText] = useState('')
+
+
 
     const onSubmit = (e) => {
         e.preventDefault();
-        searchQuery(text)
+        setSearchQuery(text)
     };
 
+    const onButtonClearInput = () => {
+        if (text) {
+            return (<> <IconButton onClick={() => {
+                setSearchQuery('')
+                setText('')
+            }} className={s.iconCross} type="button" sx={{ p: '10px' }} >
+                <CloseIcon />
+            </IconButton>
+                <Divider sx={{ height: 28, m: 0.5 }} orientation="vertical" />
+            </>)
+        }
+    }
+
     return (
-        <form onSubmit={onSubmit} className={s.search}>
-            <input onChange={(e) => {
-                setText(e.target.value);
-            }}
-                className={s.input}
-                placeholder="Поиск"
+        <form className={s.search} onSubmit={onSubmit} >
+            <TextField
+                className={s.black}
+                sx={{ ml: 1, flex: 1, }}
+                label="Search"
+                variant="standard"
                 value={text}
-            />
-            <IconSearch className={s.icon} onClick={() => searchQuery(text)} />
-            <IconClose
-                className={s.iconCross}
-                onClick={() => {
-                    setText('');
-                    searchQuery('')
+                color='secondary'
+                onChange={(e) => {
+                    setText(e.target.value);
                 }}
+
             />
-        </form>
+
+            {onButtonClearInput()}
+
+            <IconButton className={s.icon} onClick={() => setSearchQuery(text)} type="button" sx={{ p: '10px' }} aria-label="search">
+                <SearchIcon />
+            </IconButton>
+
+        </form >
     );
 }
