@@ -9,6 +9,7 @@ export const UserInfo = () => {
 
     return (
         <div className={s.container}>
+
             <img className={s.avatar} src={user.user.avatar} alt='avatar' />
             <div className={s.info}>
                 <span className={s.name}>{user.user.name}</span>

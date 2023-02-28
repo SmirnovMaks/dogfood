@@ -27,6 +27,7 @@ export const Card = ({ _id, likes, name, pictures, wight, price, discount, descr
 
     const like = useCallback(() => {
         likes.forEach((item) => {
+
             if (item === user._id) {
                 setIsLiked(true)
             }

@@ -20,8 +20,8 @@ import { Profile } from '../../pages/Prifile/Profile';
 import TransitionModal from '../Modal/Modal';
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { Product } from '../Product/Product';
 import { FavouriteProducts } from '../../pages/FavouriteProducts/FavouriteProducts';
+import { ProductPage } from '../../pages/Product/ProductPage';
 
 
 
@@ -65,25 +65,15 @@ function App() {
         setIsLoading(isLoading);
     }, []);
 
-
-
-    // useEffect(() => {
-    //     if ((location.pathname !== '/' || '/login') && !loggedIn) navigate('/login')
-    // }, [location.pathname, loggedIn, navigate])
-
-    // Крч не получилось адекватно заблокировать ручной переход по урлам если не авторизован. 
-    // Штука выше это попытка, но работает максимально криво)))
-
-
-
     const favouriteCards = useCallback((data) => {
+        console.log(2222);
         setTotalFavourite([])
         const checkLike = id => id === user._id
         data.forEach(item => {
             if (item.likes.some(checkLike)) setTotalFavourite(prev => [...prev, item])
-            //tuta hz che delat`   
+
         })
-    }, [user._id])
+    }, [user._id, cards])
 
 
     const handleRequestSignup = data => {
@@ -151,6 +141,7 @@ function App() {
 
     useEffect(() => {
         if (cards) favouriteCards(cards)
+
     }, [cards, favouriteCards])
 
     const getProducts = useCallback(() => {
@@ -160,6 +151,7 @@ function App() {
                 .then(data => {
                     if (!data.err) {
                         setCards(data.products)
+                        console.log(data.products);
 
                     }
                 })
@@ -200,7 +192,7 @@ function App() {
                                 <Route path='/favourite' element={<FavouriteProducts handleProductLike={handleProductLike} cards={totalFavourite} />} />
                                 <Route path='/login' element={<MainForm handleRequestSignup={handleRequestSignup} handleRequestLogin={handleRequestLogin} />} />
                                 <Route path='/user/:userId' element={<Profile />} />
-                                <Route path='/product/:productId' element={<Product />} />
+                                <Route path='/product/:productId' element={<ProductPage handleProductLike={handleProductLike} />} />
                                 <Route path='*' element={<NotFound />} />
                             </Routes>
                         </div>

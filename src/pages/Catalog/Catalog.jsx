@@ -64,8 +64,10 @@ export const Catalog = ({ products, searchQuery, handleProductLike, onChangeSort
             {checkAuth()}
             <div className={s.container}>
                 {resultSearch()}
-                <Sort currentSort={currentSort} onChangeSort={onChangeSort} tabs={tabs}></Sort>
-                < CardList handleProductLike={handleProductLike} cards={currentSort === 'default' ? products : sortedCards} /></div>
+                (<><Sort currentSort={currentSort} onChangeSort={onChangeSort} tabs={tabs}></Sort>
+                    < CardList handleProductLike={handleProductLike} cards={currentSort === 'default' ? products : sortedCards} />
+                </>)
+            </div>
         </>
     )
 }
