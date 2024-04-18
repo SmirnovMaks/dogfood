@@ -9,6 +9,7 @@ import { UserContext } from "../../context/userContext";
 export const Product = ({ handleProductLike, _id, name, description, price, discount, pictures, reviews, stock, likes }) => {
     const user = useContext(UserContext)
 
+
     const discountPrice = Math.round(price - (price * discount) / 100);
 
     const [count, setCount] = useState(0)
@@ -49,6 +50,7 @@ export const Product = ({ handleProductLike, _id, name, description, price, disc
         setIsLiked(!isLiked)
         handleProductLike(_id, isLiked)
     }
+    console.log({ reviews })
 
     return (
         <div className={s.container}>

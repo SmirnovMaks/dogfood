@@ -14,7 +14,6 @@ export const Catalog = ({ products, searchQuery, handleProductLike, onChangeSort
     const { loggedIn } = useContext(UserContext)
     const navigate = useNavigate()
 
-
     const tabs = [
         {
             id: 'cheap',

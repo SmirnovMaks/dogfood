@@ -42,6 +42,7 @@ function App() {
 
     const onChangeSort = useCallback(
         (newSort) => {
+            setIsLoading(true)
             setCurrentSort(newSort);
             if (newSort === 'cheap') {
                 setSortedCards([...cards].sort((a, b) => a.price - b.price));
@@ -55,6 +56,7 @@ function App() {
             if (newSort === 'default') {
                 setSortedCards(cards);
             }
+
         },
         [cards]
     );
@@ -73,7 +75,7 @@ function App() {
             if (item.likes.some(checkLike)) setTotalFavourite(prev => [...prev, item])
 
         })
-    }, [user._id, cards])
+    }, [user._id])
 
 
     const handleRequestSignup = data => {
@@ -133,7 +135,7 @@ function App() {
                 }).finally(() => setIsLoading(false))
         }
 
-    }, [searchQuery, loggedIn]);
+    }, [searchQuery, loggedIn, setIsLoading]);
 
     useEffect(() => {
         handleRequestCheckToken()

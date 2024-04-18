@@ -1,6 +1,7 @@
 {
   "name": "dogfood",
   "version": "0.1.0",
+  "homepage": "https://https://smirnovmaks.github.io/dogfood",
   "private": true,
   "dependencies": {
     "@emotion/react": "^11.10.5",
