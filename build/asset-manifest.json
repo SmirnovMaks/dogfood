@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "//smirnovmaks.github.io/dogfood/static/css/main.0e3c394a.css",
+    "main.js": "//smirnovmaks.github.io/dogfood/static/js/main.cea7c762.js",
+    "static/media/logo.svg": "//smirnovmaks.github.io/dogfood/static/media/logo.4f9d699de55eb25e196ecc4c87a15a5e.svg",
+    "static/media/instagram.svg": "//smirnovmaks.github.io/dogfood/static/media/instagram.e219a3fe6d3030ee9b90620007d3867b.svg",
+    "static/media/vk.svg": "//smirnovmaks.github.io/dogfood/static/media/vk.9eaf074ad3156178830df30967a2c5e1.svg",
+    "static/media/whatsapp.svg": "//smirnovmaks.github.io/dogfood/static/media/whatsapp.9eaf074ad3156178830df30967a2c5e1.svg",
+    "static/media/dog_face.svg": "//smirnovmaks.github.io/dogfood/static/media/dog_face.d12522b0c6dd6db4112047bd63c08e1a.svg",
+    "static/media/viber.svg": "//smirnovmaks.github.io/dogfood/static/media/viber.eaaa0cf07301155296aaff7f4f7c30e7.svg",
+    "index.html": "//smirnovmaks.github.io/dogfood/index.html",
+    "static/media/telegram.svg": "//smirnovmaks.github.io/dogfood/static/media/telegram.33642ae041bdfddb799385d0698bae0e.svg",
+    "main.0e3c394a.css.map": "//smirnovmaks.github.io/dogfood/static/css/main.0e3c394a.css.map",
+    "main.cea7c762.js.map": "//smirnovmaks.github.io/dogfood/static/js/main.cea7c762.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.0e3c394a.css",
+    "static/js/main.cea7c762.js"
+  ]
+}
